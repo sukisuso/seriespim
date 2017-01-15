@@ -9,17 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var ngFooter = (function () {
-    function ngFooter() {
+var GlobalService = (function () {
+    function GlobalService() {
     }
-    return ngFooter;
+    GlobalService.prototype.getContent = function () {
+        return this.content;
+    };
+    GlobalService.prototype.setContent = function (newContent) {
+        this.content = newContent;
+    };
+    return GlobalService;
 }());
-ngFooter = __decorate([
-    core_1.Component({
-        selector: 'ng-footer',
-        template: "\n  <div class=\"footerfix\"></div>\n  <footer>\n    <div>\n      Copyright &copy; Jesus Juan Aguilar - 2017\n    </div>\n\t</footer>\n  ",
-        styles: []
-    }),
+GlobalService = __decorate([
+    core_1.Injectable(),
     __metadata("design:paramtypes", [])
-], ngFooter);
-exports.ngFooter = ngFooter;
+], GlobalService);
+exports.GlobalService = GlobalService;

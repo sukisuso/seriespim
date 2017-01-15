@@ -9,17 +9,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var ngFooter = (function () {
-    function ngFooter() {
+var MaskComponent = (function () {
+    function MaskComponent(val) {
+        this.maskloading = val;
     }
-    return ngFooter;
+    MaskComponent.prototype.unmask = function () {
+        this.maskloading = true;
+    };
+    MaskComponent.prototype.mask = function () {
+        this.maskloading = false;
+    };
+    return MaskComponent;
 }());
-ngFooter = __decorate([
+MaskComponent = __decorate([
     core_1.Component({
-        selector: 'ng-footer',
-        template: "\n  <div class=\"footerfix\"></div>\n  <footer>\n    <div>\n      Copyright &copy; Jesus Juan Aguilar - 2017\n    </div>\n\t</footer>\n  ",
-        styles: []
+        selector: 'loading-container'
     }),
-    __metadata("design:paramtypes", [])
-], ngFooter);
-exports.ngFooter = ngFooter;
+    __metadata("design:paramtypes", [Boolean])
+], MaskComponent);
+exports.MaskComponent = MaskComponent;

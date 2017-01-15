@@ -1,0 +1,53 @@
+<ng-menu></ng-menu>
+<div class="mask"></div>
+
+<div class="container">
+    <h2 class="section-node"> {{ content.title }} </h2>
+    <div class="row col-md-12 applicationcontent">
+        <div class="row panel">
+		<div class="col-md-4 bg_blur "  [ngStyle]="{ 'background-image': 'url(' + content.poster + ')'}">
+    	    <a href="#" class="follow_btn hidden-xs">Follow</a>
+		</div>
+        <div class="col-md-8  col-xs-12">
+           <img src="{{ content.poster }}" class="img-thumbnail picture hidden-xs" />
+           <img src="" class="img-thumbnail visible-xs picture_mob" />
+           <div class="header">
+                <h1>{{ content.title }}</h1>
+                <h4>{{ content.rating }}</h4>
+                <span>{{ content.plot }}</span>
+           </div>
+        </div>
+    </div>   
+    
+	<div class="row nav">    
+        <div class="col-md-4"></div>
+        <div class="col-md-8 col-xs-12" style="margin: 0px;padding: 0px;">
+            <div (click)="selectArea('info')" class="col-md-4 col-xs-4 well"><i class="fa fa-info fa-lg"></i> </div>
+            <div (click)="selectArea('coments')" class="col-md-4 col-xs-4 well"><i class="fa fa-weixin fa-lg"></i> </div>
+            <div (click)="selectArea('links')" class="col-md-4 col-xs-4 well"><i class="fa fa-external-link fa-lg"></i> </div>
+        </div>
+    </div>
+
+    <div class="row" *ngIf="selectedArea === 'info'" >
+        <div class="col-md-12">
+             <h2 class="section-title">Information</h2>
+             <hr>
+        </div>
+    </div>
+
+    <div class="row" *ngIf="selectedArea === 'coments'">
+        <div class="col-md-12">
+             <h2 class="section-title">Comments</h2>
+             <hr>
+        </div>
+    </div>
+
+    <div class="row" *ngIf="selectedArea === 'links'">
+        <div class="col-md-12">
+             <h2 class="section-title">Link's</h2>
+             <hr>
+        </div>
+    </div>
+    </div>
+    <ng-footer></ng-footer>
+</div>

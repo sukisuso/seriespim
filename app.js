@@ -4,8 +4,8 @@
  * 
  * */
 var express    = require('express');
-var router     = require('./servernode/router');
 var expressCfg = require('./config/config.express.js'); 
+var router     = require('./servernode/router'); 
 var app        = express();
 
 expressCfg.build(app, express);

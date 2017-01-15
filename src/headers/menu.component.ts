@@ -1,9 +1,10 @@
-import { sep } from 'path';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginService } from '../service/login.service';
 
 @Component({
   selector: 'ng-menu',
+  providers: [LoginService],
   template: `
     <nav class="navbar navbar-fixed-left navbar-minimal animate" [ngClass]="{'open': isClassVisible }" role="navigation">
 		<div class="navbar-toggler animate" (click)="showCloseContent();">
@@ -47,17 +48,17 @@ import { Router } from '@angular/router';
 export class ngMenu {
    isClassVisible: boolean = false;
 
-	 constructor(public router: Router) {
+	constructor(private loginService: LoginService, public router: Router) {
     }
 
 
-  showCloseContent () {
-    this.isClassVisible = !this.isClassVisible;
-  }
-
-	closeSession () {
-		this.router.navigate(['/home']);
+	showCloseContent () {
+		this.isClassVisible = !this.isClassVisible;
 	}
 
+	closeSession () {
+		this.loginService.logout().subscribe((success) => {});
+		this.router.navigate(['/home']);
+	}
 } 
 

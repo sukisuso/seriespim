@@ -10,17 +10,34 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
+var login_service_1 = require("../service/login.service");
 var SingupComponent = (function () {
-    function SingupComponent(router) {
+    function SingupComponent(loginService, router) {
+        this.loginService = loginService;
         this.router = router;
+        this.client = {};
+        this.errorInLogin = false;
     }
+    SingupComponent.prototype.createNewUser = function () {
+        var _this = this;
+        this.errorInLogin = false;
+        this.loginService.signup(this.client).subscribe(function (success) {
+            if (success) {
+                _this.router.navigate(['/']);
+            }
+            else {
+                _this.errorInLogin = true;
+            }
+        });
+    };
     return SingupComponent;
 }());
 SingupComponent = __decorate([
     core_1.Component({
         selector: 'signup',
-        templateUrl: '/templates/singup.html'
+        templateUrl: '/templates/singup.html',
+        providers: [login_service_1.LoginService]
     }),
-    __metadata("design:paramtypes", [router_1.Router])
+    __metadata("design:paramtypes", [login_service_1.LoginService, router_1.Router])
 ], SingupComponent);
 exports.SingupComponent = SingupComponent;

@@ -3,22 +3,22 @@
         <form class="form-horizontal form">
             <fieldset>
 
-                <h2 class="subtitle">New user</h2>
+                <h2 class="subtitle">Nuevo usuario</h2>
 
                 <!-- Text input-->
                 <div class="form-group">
-                <label class="col-md-4 control-label" for="textinput">Username</label>  
+                <label class="col-md-4 control-label" for="textinput">Nombre</label>  
                 <div class="col-md-4">
-                <input id="textinput" name="textinput" type="text" placeholder="Insert your username">
+                <input [(ngModel)]="client.user" id="textinput" name="textinput" type="text" placeholder="introduce nombre de usuario">
                     
                 </div>
                 </div>
 
                 <!-- Password input-->
                 <div class="form-group login-form">
-                <label class="col-md-4 control-label" for="passwordinput">Password</label>
+                <label class="col-md-4 control-label" for="passwordinput">Contraseña</label>
                 <div class="col-md-4">
-                    <input id="passwordinput" name="passwordinput" type="password" placeholder="Insert your password">
+                    <input [(ngModel)]="client.password" id="passwordinput" name="passwordinput" type="password" placeholder="introduce contraseña">
                     
                 </div>
                 </div>
@@ -27,19 +27,26 @@
                 <div class="form-group">
                 <label class="col-md-4 control-label" for="email">Email</label>  
                 <div class="col-md-4">
-                <input id="email" name="email" type="text" placeholder="Insert yout email">
+                <input  [(ngModel)]="client.email" id="email" name="email" type="text" placeholder="introduce email">
                     
                 </div>
+                </div>
+
+                 <!-- Text input-->
+                <div class="form-group" *ngIf="errorInLogin" >
+                    <div class="col-md-4 col-md-offset-4">
+                        <p style="color:red;">Credenciales no validos</p>
+                    </div>
                 </div>
 
                 <!-- Button -->
                 <div class="form-group">
                 <label class="col-md-4 control-label" for="button"></label>
                 <div class="col-md-4">
-                    <button type="button" id="button" name="button">SAVE</button>
+                    <button type="button" id="button" name="button" (click)="createNewUser()">guardar</button>
                 </div>
                 </div>
-                <p class="message"><a href="#" [routerLink]="['/home']" > Go back </a></p>
+                <p class="message"><a href="#" [routerLink]="['/home']" > Atras </a></p>
             </fieldset>
         </form>
     </div>

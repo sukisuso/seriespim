@@ -1,4 +1,5 @@
 {
     "author": "Jesús Juan Aguilar",
-    "database": "mongodb://localhost:27017/seriespim"
+    "database": "mongodb://localhost:27017/seriespim",
+    "port": 3000
 }

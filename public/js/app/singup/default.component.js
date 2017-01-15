@@ -10,20 +10,44 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
+var login_service_1 = require("../service/login.service");
+var user_service_1 = require("../service/user.service");
 var DefaultComponent = (function () {
-    function DefaultComponent(router) {
+    function DefaultComponent(loginService, router, userService) {
+        var _this = this;
+        this.loginService = loginService;
         this.router = router;
+        this.userService = userService;
+        this.client = {};
+        this.errorLoginIn = false;
+        loginService.isAuth().subscribe(function (user) {
+            if (user) {
+                _this.userService.setUser(user);
+                _this.router.navigate(['m']);
+            }
+        });
     }
     DefaultComponent.prototype.loginAction = function () {
-        this.router.navigate(['m']);
+        var _this = this;
+        this.errorLoginIn = false;
+        this.loginService.login(this.client).subscribe(function (user) {
+            if (user) {
+                _this.userService.setUser(user);
+                _this.router.navigate(['m']);
+            }
+            else {
+                _this.errorLoginIn = true;
+            }
+        });
     };
     return DefaultComponent;
 }());
 DefaultComponent = __decorate([
     core_1.Component({
         selector: 'default',
-        templateUrl: '/templates/login.html'
+        templateUrl: '/templates/login.html',
+        providers: [login_service_1.LoginService, user_service_1.UserService]
     }),
-    __metadata("design:paramtypes", [router_1.Router])
+    __metadata("design:paramtypes", [login_service_1.LoginService, router_1.Router, user_service_1.UserService])
 ], DefaultComponent);
 exports.DefaultComponent = DefaultComponent;

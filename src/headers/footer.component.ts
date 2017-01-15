@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   <div class="footerfix"></div>
   <footer>
     <div>
-      Copyright &copy; Jesus Juan Aguilar - 2016
+      Copyright &copy; Jesus Juan Aguilar - 2017
     </div>
 	</footer>
   `, 
