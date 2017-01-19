@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+/* Components*/
 import { AppComponent } from './app.component';
 import { ngHeader }  from './headers/header.component';
 import { ngFooter }  from './headers/footer.component';
@@ -15,6 +16,10 @@ import { NewsComponent } from './content/news.component';
 import { ProfileComponent } from './content/profile.component'; 
 import { SearchComponent } from './content/search.component'; 
 import { ContentComponent } from './content/content.component';
+import { InfoComponent } from './components/information.component';
+import { LinksComponent } from './components/links.component';
+
+/* Services, Pipes */
 import { TruncatePipe } from './headers/truncate.pipe';
 import { GlobalService } from './service/global.service';
 
@@ -32,7 +37,8 @@ const appRoutes: Routes = [
 @NgModule({
     imports: [ BrowserModule, RouterModule.forRoot(appRoutes) ,HttpModule, FormsModule],
     declarations: [ AppComponent , ngHeader, ngFooter, SingupComponent, DefaultComponent, MainComponent, ngMenu,
-                  ProfileComponent, NewsComponent, SearchComponent, ContentComponent, TruncatePipe],
+                    ProfileComponent, NewsComponent, SearchComponent, ContentComponent, TruncatePipe, InfoComponent,
+                    LinksComponent],
     bootstrap: [ AppComponent ],
     providers: [GlobalService],
 })

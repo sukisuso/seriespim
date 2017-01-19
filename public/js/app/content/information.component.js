@@ -6,15 +6,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
-var ProfileComponent = (function () {
-    function ProfileComponent() {
+var InfoComponent = (function () {
+    function InfoComponent() {
     }
-    return ProfileComponent;
+    return InfoComponent;
 }());
-ProfileComponent = __decorate([
+InfoComponent = __decorate([
     core_1.Component({
-        selector: 'profile',
-        template: "\n  <ng-menu></ng-menu>\n\n<div class=\"container\">\n    <div class=\"row col-md-12\">\n        <div class=\"applicationcontent\">\n             <h2> Profile</h2>\n        </div>\n    </div>\n</div>\n\n<ng-footer></ng-footer>\n  "
+        selector: 'info',
+        templateUrl: '/templates/content/information.html'
     })
-], ProfileComponent);
-exports.ProfileComponent = ProfileComponent;
+], InfoComponent);
+exports.InfoComponent = InfoComponent;

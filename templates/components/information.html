@@ -1,0 +1,88 @@
+<div class="content">
+    <div class="table-responsive">
+    <table class="table table-condensed table-responsive table-user-information">
+        <tbody>
+            <tr>        
+                <td style="width: 25%;  height: 50px;">
+                    <strong>
+                        <i class="fa fa-calendar-o fa-lg"></i>
+                        Years                                                
+                    </strong>
+                </td>
+                <td class="text-primary" style="width: 25%;  height: 50px;">
+                    {{ content._year_data }}     
+                </td>
+                <td style="width: 25%;  height: 50px;">
+                    <strong>
+                        <i class="fa fa-clock-o fa-lg"></i>
+                        Runtime                                                
+                    </strong>
+                </td>
+                <td class="text-primary" style="width: 25%;  height: 50px;">
+                    {{ content.runtime }}     
+                </td>
+            </tr>
+
+            <tr>        
+                <td style="width: 25%;  height: 50px;"> 
+                    <strong>
+                        <i class="fa fa-users fa-lg"></i>
+                        Actors                                                
+                    </strong>
+                </td>
+                <td class="text-primary" style="width: 25%;  height: 50px;">
+                    {{ content.actors }}     
+                </td>
+                <td style="width: 25%;  height: 50px;">
+                    <strong>
+                        <i class="fa fa-map fa-lg"></i>
+                        Country                                                
+                    </strong>
+                </td>
+                <td class="text-primary" style="width: 25%;  height: 50px;">
+                    {{ content.country }}     
+                </td>
+            </tr>
+
+             <tr>        
+                <td style="width: 25%;  height: 50px;">
+                    <strong>
+                        <i class="fa fa-file-video-o  fa-lg"></i>
+                        Genres                                                
+                    </strong>
+                </td>
+                <td class="text-primary" style="width: 25%;  height: 50px;">
+                    {{ content.genres }}     
+                </td>
+                <td style="width: 25%;  height: 50px;">
+                    <strong>
+                        <i class="fa fa-binoculars  fa-lg"></i>
+                        Director                                                
+                    </strong>
+                </td>
+                <td class="text-primary" style="width: 25%;  height: 50px;">
+                    {{ content.director }}     
+                </td>
+            </tr>
+
+             <tr>        
+                <td style="width: 25%; height: 50px;">
+                    <strong>
+                        <i class="fa  fa-pencil fa-lg"></i>
+                        Writer                                                
+                    </strong>
+                </td>
+                <td class="text-primary" style="width: 25%;  height: 50px;">
+                    {{ content.writer }}     
+                </td>
+                 <td style="width: 25%;  height: 50px;">
+                </td>
+                <td class="text-primary" style="width: 25%;  height: 50px;">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+</div>
+
+<a id="myLink" href="{{ content.imdburl }}" target="_blank" class="primary">IMDB</a>

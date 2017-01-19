@@ -32,12 +32,6 @@ function StartPaths(app){
         }).catch(err =>{handler(res)});
     });
 
-    app.get('/api/actor', function(req, res) {
-        co(function *() {
-            var newContent = yield imdb.getById('nm0000115');
-            res.send(newContent);
-        }).catch(err =>{handler(res)});
-    });
 }
 
 exports.startPaths = StartPaths;

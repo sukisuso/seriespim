@@ -31,8 +31,9 @@
     <div class="row" *ngIf="selectedArea === 'info'" >
         <div class="col-md-12">
              <h2 class="section-title">Information</h2>
-             <hr>
+             <info [content]="content"></info>
         </div>
+        
     </div>
 
     <div class="row" *ngIf="selectedArea === 'coments'">
@@ -46,6 +47,7 @@
         <div class="col-md-12">
              <h2 class="section-title">Link's</h2>
              <hr>
+             <links [series]="content.series" ></links>
         </div>
     </div>
     </div>
